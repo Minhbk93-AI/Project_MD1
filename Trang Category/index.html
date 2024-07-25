@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Category</h2>
+      <div class="header">
+        <p><i class="fa-solid fa-bars"></i></p>
+        <div class="header-right">
+          <p>Chào mừng bạn đã quay trở lại</p>
+          <p>
+            <i class="fa-solid fa-user"></i>
+            <strong>Nguyễn Minh</strong>
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-left">
+        <ul>
+          <li>
+            <a href=""><i class="fa-solid fa-chart-simple"></i> Statistical</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-table-cells"></i> Product</a>
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa-solid fa-hand-holding-dollar"></i> Revenue</a
+            >
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-user"></i> User</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i> Order</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-right">
+        <div>
+          <h1 id="form-title">Thêm sản phẩm</h1>
+          <br />
+          <div class="main-right-top">
+            <input
+              id="category-input-name"
+              type="text"
+              width="100%"
+              placeholder="Thêm danh mục"
+            />
+
+            <button type="button" id="btn-submit-Form">Đồng ý</button>
+            <button type="button" id="btn-cancel-Form">Hủy</button>
+          </div>
+          <p id="error-category-name"></p>
+        </div>
+        <div class="main-right-center">
+          <div>
+            <input type="text" id="input-search" />
+            <button id="btn-search">Search</button>
+          </div>
+          <div>
+            <label for="sort-select">Sắp xếp</label>
+            <select name="quantity" id="sort-select">
+              <option value="No">Ban đầu</option>
+              <option value="aes">Tăng dần</option>
+              <option value="des">Giảm dần</option>
+            </select>
+          </div>
+        </div>
+        <div class="main-right-bottom">
+          <table>
+            <thead>
+              <th>STT</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Hành động</th>
+            </thead>
+            <tbody id="listCategories">
+              <!-- <td>1</td>
+              <td>1</td>
+              <td class="name-cell">A</td>
+              <td>
+                <button>Update</button>
+                <button>Delete</button> -->
+              </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/e6840b0d17.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./category.js"></script>
+  </body>
+</html>

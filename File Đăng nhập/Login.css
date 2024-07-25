@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PHẦN HEADER */
+
+header {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+
+
+
+}
+
+
+ul>li {
+    font-size: 15px;
+    color: #221f20;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+/* NAVBAR-LEFT */
+
+.navbar-left {
+    flex: 3;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+}
+
+.navbar-left-input-total {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    position: relative;
+
+    border: 1px, solid #e7e8e9;
+}
+
+.navbar-left-input-total button {
+    font-size: 15px;
+    position: absolute;
+    left: 5px;
+
+    background-color: white;
+    border: none;
+}
+
+.navbar-left-input:focus {
+    border: none;
+}
+
+.navbar-left-input {
+
+    width: 100%;
+    font-size: 15px;
+    height: 20px;
+    position: absolute;
+    left: 18px;
+    border: none;
+
+
+}
+
+/* NAVBAR-CENTER */
+
+.navbar-center {
+    flex: 4;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 100;
+    
+
+
+}
+.navbar-center li{
+    position: relative;
+   
+}
+.navbar-center li:hover .sub-menu{
+    visibility: visible;
+    transform: rotateY(10px);
+    transition: all ease-in-out 0.5s;
+}
+.navbar-center  li .sub-menu{
+    position: absolute;
+    top: 30px;
+    display: flex;
+    
+    gap: 40px;
+    visibility: hidden;
+    width: 600px;
+    height: 300px;
+    padding: 20px 20px;
+    border: 1px solid #e7e8e9;
+    background-color: #ffffff;
+
+
+}
+
+.navbar-center  li .sub-menu ul{
+    margin-bottom: 20px;
+}
+.navbar-center  li .sub-menu ul li{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* NAVBAR-RIGHT */
+
+.navbar-right {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+
+    font-size: 20px;
+}
+
+
+/* PHẦN MAIN */
+.form-login{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+   align-items: center;
+    gap: 30px;
+    height: 600px;
+    padding: 0 100px;
+
+}
+.form-login .group-control{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.form-login .group-control .input-control{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px ;
+   
+}
+.form-login .btn{
+    color: #ffffff;
+    background-color: #0066cc;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    
+}
+
+form{
+    flex: 1;
+}
+.img-login{
+    flex: 1;
+}
+/* //PHẦN FOOTER */
+footer {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 50px 50px;
+
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-center {
+    flex: 3;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-center ul {
+    font-size: 22px;
+}
+
+.footer-center ul li {
+
+    padding: 6px;
+}
+
+.footer-center ul li a {
+    font-size: 15px;
+    color: #221f20;
+
+}
+
+.footer-right {
+    flex: 1;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <div class="ovelay" id="ovelay"></div>
+  <body>
+    <header>
+      <h2>User</h2>
+      <div class="header">
+        <p><i class="fa-solid fa-bars"></i></p>
+        <div class="header-right">
+          <p>
+            <i class="fa-solid fa-user"></i>
+            <strong>Nguyễn Minh</strong>
+            <button id="logout">Đăng xuất</button>
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-left">
+        <ul>
+          <li>
+            <a href=""><i class="fa-solid fa-chart-simple"></i> Statistical</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-table-cells"></i> Product</a>
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa-solid fa-hand-holding-dollar"></i> Revenue</a
+            >
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-user"></i> User</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i> Order</a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-right">
+        <div class="main-right-top">
+          <button type="button" id="creat-form-product">Thêm User mới</button>
+        </div>
+        <div class="main-right-center">
+          <div>
+            <input type="text" id="inp-search-name" />
+            <button type="button" id="btn-search">Search</button>
+          </div>
+          <div class="price-form">
+            <label for="fillter-price">Price</label>
+            <select name="quantity" id="fillter-price">
+              <option value="quantity">Tất cả</option>
+              <option value="1">200.000 VNĐ-400.000 VNĐ</option>
+              <option value="2">400.000 VNĐ-800.000 VNĐ</option>
+              <option value="3">800.000 VNĐ-1.200.000 VNĐ</option>
+              <option value="4">1.200.000 VNĐ-1.500.000 VNĐ</option>
+              <option value="5">> 1.500.000 VNĐ</option>
+            </select>
+          </div>
+          <div>
+            <label for="sort-select">Sắp xếp</label>
+            <select name="category" id="sort-select" onchange="renderUser()">
+              <option value="No">Tất cả</option>
+              <option value="aes">Tăng dần</option>
+              <option value="des">Giảm dần</option>
+              <!-- <option value="">Váy</option>
+              <option value="">Quần âu</option>
+              <option value="">Áo sơ mi</option>
+              <option value="">Áo kaki</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="main-right-bottom">
+          <table>
+            <tr>
+              <th>Id</th>
+              <th>FullName</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Status</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+
+            <tbody id="new-user"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div id="pagination"></div>
+
+    <form method="get" class="form" id="form">
+      <h1 id="form-title">Thêm mới sản phẩm</h1>
+      <br />
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" />
+      <p id="error-product-name"></p>
+      <br />
+
+      <label for="price">Price:</label>
+      <input type="number" id="price" /><br /><br />
+
+      <label for="inventory">Inventory:</label>
+      <input type="text" id="inventory" /><br /><br />
+
+      <label for="category-form">Category:</label>
+      <select name="Category" id="category-form">
+        <!-- <option value="category">abc</option> -->
+      </select>
+      <br /><br />
+
+      <div class="image-form">
+        <label for="image">Image:</label>
+        <input type="file" id="image" onchange="encodeImageFileAsURL(this)" />
+        <img width="100px" id="image-product" src="" alt="add-image" />
+      </div>
+      <br /><br />
+      <div class="button-form-total">
+        <button type="button" id="btn-submit-form" class="button-form">
+          Submit
+        </button>
+        <button type="button" id="btn-cancel-form" class="button-form">
+          Cancel
+        </button>
+      </div>
+      <br />
+    </form>
+    <script
+      src="https://kit.fontawesome.com/e6840b0d17.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
