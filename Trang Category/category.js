@@ -12,7 +12,7 @@ let sortSelect = document.getElementById("sort-select");
 //
 let idUpdateGlobal = null;
 
-//
+// THÊM SỰ KIỆN ONCLICK VÀO NÚT SUBMIT
 btnSubmit.onclick = function () {
   const dbCategory = JSON.parse(localStorage.getItem("categories")) || [];
   // console.log(dbCategory);
@@ -30,6 +30,7 @@ btnSubmit.onclick = function () {
   } else {
   }
 
+  // UPDATE CATEGORY
   if (idUpdateGlobal) {
     //logic update
     let vitrisua = dbCategory.findIndex(
@@ -44,8 +45,6 @@ btnSubmit.onclick = function () {
     //
     return;
   }
-
-  console.log("dan hem");
 
   let id = 1;
   if (dbCategory.length > 0) {

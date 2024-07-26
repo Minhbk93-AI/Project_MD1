@@ -22,7 +22,7 @@
 //     id: 3,
 //     name: "Macbook Pro",
 //     priceAcc: 199900,
-//     priceDelete: 
+//     priceDelete:
 //     imageUrl: "https://pngimg.com/uploads/macbook/macbook_PNG8.png",
 //     qty: 20,
 //     heading: "The best for the brightest",
@@ -39,3 +39,67 @@
 //     des: "Chân Váy Tuysi Xếp Ly",
 //   },
 
+const products = document.getElementById("product-total");
+const userName = document.getElementById("user-name");
+const logOut = document.getElementById("logout");
+const btnAdds = document.getElementsByClassName("add-btn");
+const cart = document.getElementById("cart");
+const dbProduct = JSON.parse(localStorage.getItem("products"));
+
+// Render Sản phẩm ra màn hình
+function renderProduct() {
+  let stringHTML = "";
+  const dbProduct = JSON.parse(localStorage.getItem("products"));
+
+  for (let i in dbProduct) {
+    stringHTML += `
+     <div class="product">
+            <a href="#"
+              ><img
+                src="${dbProduct[i].image}"
+                alt="product"
+                width="100%"
+            /></a>
+            <p>${new Intl.NumberFormat("vi-VN", { style: "decimal" }).format(
+              dbProduct[i].price
+            )}VNĐ</p>
+            <button class="add-btn" style="background-color: bisque">Thêm vào giỏ hàng</button>
+          </div>
+    `;
+    products.innerHTML = stringHTML;
+  }
+}
+
+renderProduct();
+
+//Login Logout USER
+const userLogin = JSON.parse(localStorage.getItem("user-login"));
+function renderUser() {
+  if (userLogin) {
+    userName.innerHTML = userLogin.name;
+    logOut.style.display = "block";
+  } else {
+    userName.innerHTML = `<a href="http://127.0.0.1:5501/File%20%C4%90%C4%83ng%20nh%E1%BA%ADp/Login.html"><button type="button" style="color: brown">Login</button></a>`;
+    logOut.style.display = "none";
+  }
+}
+renderUser();
+
+logOut.onclick = function () {
+  localStorage.removeItem("user-login");
+  window.location.href =
+    "http://127.0.0.1:5501/File%20Trang%20ch%E1%BB%A7/Home.html";
+  //   document.getElementById("user-name")="<button>Login</button>";
+  renderUser();
+};
+
+//
+let carts = JSON.parse(window.localStorage.getItem("cart"));
+
+for (let btnAdd of btnAdds) {
+  btnAdd.onclick = function () {
+    let addProductIndex = dbProduct.findIndex(function (e, i) {
+      return e.id === +btnAdd.id;
+    });
+  };
+}

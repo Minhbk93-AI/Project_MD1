@@ -24,6 +24,10 @@ let categoryLocal = "categories";
 let idUpdateGlobal = null;
 
 //
+let pageSize = 5;
+let totalPage = 1;
+let curentPage = 1;
+//
 let imageBase64 = null;
 //
 // KHI ẤN NÚT THÊM SẢN PHẨM FORM TẠO SẢN PHẨM HIỆN LÊN
@@ -49,7 +53,7 @@ function encodeImageFileAsURL(element) {
 
   reader.readAsDataURL(file);
 }
-//
+//THÊM SỰ KIỆN ONCLICK VÀO NÚT SUBMIT
 btnSubmitForm.onclick = function () {
   const dbProducts = JSON.parse(localStorage.getItem(productsLocal)) || [];
 
@@ -59,14 +63,17 @@ btnSubmitForm.onclick = function () {
     return;
   }
 
+  // Đk cho id product
   let id = 1;
   if (dbProducts.length > 0) {
     id = dbProducts[dbProducts.length - 1].id + 1;
   }
 
+  // UPDATE SẢN PHẨM
   if (idUpdateGlobal) {
     const vitri = dbProducts.findIndex((el) => el.id == idUpdateGlobal);
     dbProducts[vitri] = {
+      id: id,
       name: productName.value,
       price: +price.value,
       image: imageBase64,
@@ -84,6 +91,7 @@ btnSubmitForm.onclick = function () {
     return;
   }
 
+  // THÊM SẢN PHẨM
   const product = {
     id: id,
     name: productName.value,
@@ -102,7 +110,7 @@ btnSubmitForm.onclick = function () {
   imageBase64 = null;
   renderproduct();
 };
-//
+// RENDER PRODUCT
 function renderproduct() {
   //
   //
@@ -119,6 +127,11 @@ function renderproduct() {
   }
 
   //
+  renderPage(dbProducts);
+  let start = (curentPage - 1) * pageSize;
+  dbProducts = dbProducts.slice(start, start + pageSize);
+
+  // LỌC SẢN PHẨM THEO GIÁ
 
   switch (filterPrice.value) {
     case "0":
@@ -190,7 +203,7 @@ function renderproduct() {
 }
 renderproduct();
 
-//
+// HÀM XÓA SẢN PHẨM
 function deleteProduct(idDelProduct) {
   let dbProducts = JSON.parse(localStorage.getItem(productsLocal)) || [];
   let findIndex = dbProducts.findIndex(function (element, id) {
@@ -201,6 +214,7 @@ function deleteProduct(idDelProduct) {
   renderproduct();
 }
 
+// HÀM UPDATE SẢN PHẨM
 function updateProduct(idEditProduct) {
   const dbProducts = JSON.parse(localStorage.getItem(productsLocal)) || [];
 
@@ -226,6 +240,7 @@ btnSearchProduct.onclick = function () {
   renderproduct();
 };
 
+// HÀM TẠO CHỌN CATEGORY
 function renderSelectCategory() {
   let dbCategory = JSON.parse(window.localStorage.getItem(categoryLocal)) || [];
   let stringHTML = "";
@@ -241,6 +256,24 @@ function renderSelectCategory() {
 renderSelectCategory();
 //
 //
+function renderPage(dbProducts) {
+  totalPage = Math.ceil(dbProducts.length / pageSize);
+
+  let stringHTML = "";
+  for (let i = 1; i <= totalPage; i++) {
+    stringHTML += `
+      <button onclick="choosePage(${i})" >${i}</button>
+    `;
+  }
+  document.getElementById("pagination").innerHTML = stringHTML;
+}
+
+function choosePage(i) {
+  curentPage = i;
+  renderproduct();
+}
+//
+// HÀM RENDER CATEGORY
 function renderCategory() {
   let dbCategory = JSON.parse(window.localStorage.getItem(categoryLocal)) || [];
   let stringHTML = "";

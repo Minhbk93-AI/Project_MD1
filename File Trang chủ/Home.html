@@ -160,9 +160,11 @@
           href="http://127.0.0.1:5501/File%20%C4%90%C4%83ng%20nh%E1%BA%ADp/Login.html"
           ><i class="fa-solid fa-user"></i
         ></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        <span style="color: brown" id="user-name"></span>
+        <a href="#"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
         <span class="total-qty">0</span>
       </div>
+      <i id="logout" class="fa-solid fa-right-from-bracket"></i>
     </header>
 
     <!-- PHẦN MAIN -->
@@ -189,8 +191,8 @@
           <a href=""><li>IVY kids</li></a>
         </ul>
 
-        <div class="product-content">
-          <div class="product">
+        <div class="product-content" id="product-total">
+          <!-- <div class="product">
             <a href="#"
               ><img
                 src="./images/image_product/product1.webp"
@@ -199,7 +201,7 @@
             /></a>
             <span class="badget-badget-01">-30<span>%</span></span>
             <div class="info-product">
-              <!-- <div class="list-color">
+              <div class="list-color">
                 <ul>
                   <li class="checked">
                     <a
@@ -235,7 +237,7 @@
                 <div class="favourite" data-id="40193">
                   <i class="fa-regular fa-heart"></i>
                 </div>
-              </div> -->
+              </div>
               <h3 class="title-product">
                 <a
                   href="https://ivymoda.com/sanpham/ao-blazer-dahlia-set-ms-67m8817-40193"
@@ -256,26 +258,26 @@
                 ><i class="fa-solid fa-cart-shopping"></i
               ></a>
             </div>
-          </div>
+          </div> -->
 
-          <div class="product">
-            <a href="#">
+          <!-- <div class="product"> -->
+          <!-- <a href="#">
               <img
                 src="./images/image_product/product2.webp"
                 alt="product"
                 width="100%"
               />
-            </a>
-          </div>
-          <div class="product">
-            <a href="#">
+            </a> -->
+          <!-- </div>
+          <div class="product" id="product"> -->
+          <!-- <a href="#">
               <img
                 src="./images/image_product/product3.webp"
                 alt="product"
                 width="100%"
               />
-            </a>
-          </div>
+            </a> -->
+          <!-- </div>
 
           <div class="product">
             <a href="#">
@@ -295,12 +297,13 @@
                 width="100%"
               />
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="link-product">
           <a href="#" class="all-product">Xem tất cả</a>
         </div>
       </div>
+      <br />
 
       <!-- //
    // -->
@@ -477,6 +480,6 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="./Home.js"></script>
+    <script src="Home.js"></script>
   </body>
 </html>
