@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="./listorder.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2>Managent</h2>
+      <div class="header">
+        <p><i class="fa-solid fa-bars"></i></p>
+        <div class="header-right">
+          <p>
+            <i class="fa-solid fa-user"></i>
+            <strong>Nguyễn Minh</strong>
+            <button type="button" id="logout">Đăng xuất</button>
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-left">
+        <ul>
+          <li>
+            <a href="../../DataBase/category/category.html"
+              ><i class="fa-solid fa-hand-holding-dollar"></i>Category</a
+            >
+          </li>
+          <li>
+            <a href="../../DataBase/product/product.html"
+              ><i class="fa-solid fa-table-cells"></i> Product</a
+            >
+          </li>
+          <li>
+            <a href="./user.html"><i class="fa-solid fa-user"></i> User</a>
+          </li>
+          <li>
+            <a href="../../"><i class="fa-solid fa-cart-shopping"></i> Order</a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-right">
+        <div>
+          <h2>Order List</h2>
+        </div>
+        <div class="main-right-center">
+          <div>
+            <input type="text" id="text-search" />
+            <button id="search">Search</button>
+          </div>
+          <div>
+            <label for="arrange">Sắp xếp</label>
+            <select name="arrange" id="select-arrange">
+              <option value="tatca">Tất cả</option>
+              <option value="tangdan">Tăng dần</option>
+              <option value="giamdan">Giảm dần</option>
+            </select>
+          </div>
+        </div>
+        <div class="main-right-bottom">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Active</th>
+              </tr>
+            </thead>
+            <tbody id="list-order">
+              <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+            </tbody>
+          </table>
+          <div class="box" id="next-page"></div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/e6840b0d17.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./listorder.js"></script>
+  </body>
+</html>

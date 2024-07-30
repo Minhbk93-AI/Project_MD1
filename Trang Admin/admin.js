@@ -42,7 +42,7 @@ function renderUser() {
           <td>
             ${userLogin[i].name}
           </td>
-          <td>${userLogin[i].name}</td>
+          
           <td>${userLogin[i].email}</td>
           <td>${userLogin[i].password}</td>
           <td>${userLogin[i].status ? "Active" : "Block"}</td>
@@ -76,6 +76,7 @@ function changeStatus(id) {
   // ve lai
 }
 
+// Phân trang
 function renderPage(dbRegister) {
   totalPage = Math.ceil(dbRegister.length / pageSize);
 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - Ivymoda</title>
+    <link rel="stylesheet" href="./products.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../File Trang chủ/images/IVYMODA.png" alt="Ivymoda Logo" />
+        </div>
+        <ul class="menu">
+          <li><a href="#">NỮ</a></li>
+          <li><a href="#">NAM</a></li>
+          <li><a href="#">TRẺ EM</a></li>
+          <li><a href="#">SUPER SALE</a></li>
+          <li><a href="#">BỘ SƯU TẬP</a></li>
+          <li><a href="#">VỀ CHÚNG TÔI</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="TÌM KIẾM SẢN PHẨM" />
+        </div>
+        <div class="user-actions">
+          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+          <a
+            href="http://127.0.0.1:5501/File%20%C4%90%C4%83ng%20nh%E1%BA%ADp/Login.html"
+            id="cart"
+          >
+            <i class="fa-solid fa-user"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <aside class="filter">
+        <h2>ÁO NAM</h2>
+        <div class="filter-category">
+          <button class="accordion">Size</button>
+          <div class="panel">
+            <!-- Nội dung bộ lọc -->
+          </div>
+        </div>
+        <div class="filter-category">
+          <button class="accordion">Màu sắc</button>
+          <div class="panel">
+            <!-- Nội dung bộ lọc -->
+          </div>
+        </div>
+        <div class="filter-category">
+          <button class="accordion">Mức giá</button>
+          <div class="panel">
+            <!-- Nội dung bộ lọc -->
+          </div>
+        </div>
+        <div class="filter-category">
+          <button class="accordion">Mức chiết khấu</button>
+          <div class="panel">
+            <!-- Nội dung bộ lọc -->
+          </div>
+        </div>
+        <div class="filter-category">
+          <button class="accordion">Nâng cao</button>
+          <div class="panel">
+            <!-- Nội dung bộ lọc -->
+          </div>
+        </div>
+        <div class="filter-buttons">
+          <button class="reset-button">BỎ LỌC</button>
+          <button class="apply-button">LỌC</button>
+        </div>
+      </aside>
+      <!-- <a href="../Trang sản phẩm chi tiết/index.html"></a> -->
+      <section class="products" id="product">
+        <!-- <div class="product">
+          <img src="product1.jpg" alt="Áo Sơ Mi Nam Tay Ngắn" />
+          <p>Áo Sơ Mi Nam Tay Ngắn</p>
+          <p>990.000đ</p>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Áo Polo Nam Màu Đen" />
+          <p>Áo Polo Nam Màu Đen</p>
+          <p>790.000đ</p>
+        </div>
+        <div class="product">
+          <img src="product3.jpg" alt="Áo Thun Nam Dài Tay" />
+          <p>Áo Thun Nam Dài Tay</p>
+          <p>1.190.000đ</p>
+        </div>
+        <div class="product">
+          <img src="product4.jpg" alt="Áo Thun Nam Dài Tay" />
+          <p>Áo Thun Nam Dài Tay</p>
+          <p>1.190.000đ</p>
+        </div> -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Ivymoda. Tất cả các quyền được bảo vệ.</p>
+    </footer>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/7b988689d5.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./products.js"></script>
+  </body>
+</html>

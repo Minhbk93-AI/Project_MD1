@@ -17,6 +17,7 @@ const btnSearchProduct = document.getElementById("btn-search");
 const inpSearch = document.getElementById("inp-search-name");
 const categoryForm = document.getElementById("category-form");
 const filterPrice = document.getElementById("fillter-price");
+const pagination = document.getElementById("pagination");
 
 //TẠO CÁC BIẾN GLOBAL___________//
 let productsLocal = "products";
@@ -73,7 +74,7 @@ btnSubmitForm.onclick = function () {
   if (idUpdateGlobal) {
     const vitri = dbProducts.findIndex((el) => el.id == idUpdateGlobal);
     dbProducts[vitri] = {
-      id: id,
+      id: idUpdateGlobal,
       name: productName.value,
       price: +price.value,
       image: imageBase64,
@@ -255,17 +256,17 @@ function renderSelectCategory() {
 }
 renderSelectCategory();
 //
-//
+// HÀM RENDER PHÂN TRANG
 function renderPage(dbProducts) {
   totalPage = Math.ceil(dbProducts.length / pageSize);
 
   let stringHTML = "";
   for (let i = 1; i <= totalPage; i++) {
     stringHTML += `
-      <button onclick="choosePage(${i})" >${i}</button>
+      <button class="button-choosePage" onclick="choosePage(${i})" >${i}</button>
     `;
   }
-  document.getElementById("pagination").innerHTML = stringHTML;
+  pagination.innerHTML = stringHTML;
 }
 
 function choosePage(i) {
@@ -296,3 +297,13 @@ filterPrice.onchange = function () {
 // categoryForm.onchange = function () {
 //   renderSelectCategory;
 // };
+const userName = document.getElementById("user-prodcuct");
+const userLogin = JSON.parse(localStorage.getItem("user-login"));
+function renderUser() {
+  if (userLogin) {
+    userName.innerHTML = userLogin.name;
+  } else {
+    userName.innerHTML = `<a href="http://127.0.0.1:5501/File%20%C4%90%C4%83ng%20nh%E1%BA%ADp/Login.html"><button type="button" style="color: brown">Login</button></a>`;
+  }
+}
+renderUser();

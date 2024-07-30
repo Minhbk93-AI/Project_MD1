@@ -36,3 +36,13 @@ btnLogin.onclick = function () {
   }
   //   window.location.href = "admin.html";
 };
+
+// Kiểm tra role = 0 thì là user , không thì sẽ là admin
+
+// if (user.role == 0) {
+//   localStorage.setItem("userlogin", JSON.stringify(user));
+//   window.location.href = "../../Trang chủ/trangchu.html";
+// } else {
+//   localStorage.setItem("adminlogin", JSON.stringify(user));
+//   window.location.href = "../../DataBase/category/category.html";
+// }

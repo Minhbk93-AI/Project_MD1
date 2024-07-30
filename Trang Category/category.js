@@ -147,3 +147,14 @@ btnSearch.onclick = function () {
 sortSelect.onchange = function () {
   renderCategory();
 };
+
+const userName = document.getElementById("user-category");
+const userLogin = JSON.parse(localStorage.getItem("user-login"));
+function renderUser() {
+  if (userLogin) {
+    userName.innerHTML = userLogin.name;
+  } else {
+    userName.innerHTML = `<a href="http://127.0.0.1:5501/File%20%C4%90%C4%83ng%20nh%E1%BA%ADp/Login.html"><button type="button" style="color: brown">Login</button></a>`;
+  }
+}
+renderUser();

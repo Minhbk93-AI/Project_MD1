@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết sản phẩm - Ivymoda</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../File Trang chủ/images/IVYMODA.png" alt="Ivymoda Logo" />
+        </div>
+        <ul class="menu">
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li>
+            <a href="#">Giỏ hàng</a>
+            <i id="shopping-cart" class="fa-solid fa-cart-shopping"></i>
+            <span class="total-cart" id="total-cart">0</span>
+          </li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="product-detail">
+        <div class="product-images">
+          <img id="mainImage" src="product-main.jpg" alt="Sản phẩm chính" />
+          <!-- <div class="thumbnails">
+            <img
+              src="product-thumb1.jpg"
+              alt="Thumbnail 1"
+              onclick="changeImage('product-thumb1.jpg')"
+            />
+            <img
+              src="product-thumb2.jpg"
+              alt="Thumbnail 2"
+              onclick="changeImage('product-thumb2.jpg')"
+            />
+          </div> -->
+        </div>
+        <div class="product-info">
+          <h1 id="productName">Tên sản phẩm</h1>
+          <p class="price" id="productPrice">$70.00</p>
+          <p class="description" id="productDescription">
+            Đây là mô tả chi tiết về sản phẩm. Nó bao gồm các tính năng, chất
+            liệu, hướng dẫn bảo quản và các thông tin khác liên quan đến sản
+            phẩm.
+          </p>
+
+          <div class="quantity">
+            <button id="btn-minus">-</button>
+
+            <input type="number" id="input-quantity" value="1" min="1" />
+            <button id="btn-plus">+</button>
+          </div>
+          <button
+            id="btn-add-to-cart"
+            class="add-to-cart"
+            onclick="addToCart()"
+          >
+            Thêm vào giỏ hàng
+          </button>
+          <p id="error-message" style="color: red">abc</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Ivymoda. Tất cả các quyền được bảo vệ.</p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/7b988689d5.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./test.js"></script>
+  </body>
+</html>

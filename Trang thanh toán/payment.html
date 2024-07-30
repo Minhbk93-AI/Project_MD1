@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh Toán - Ivy moda</title>
+    <link rel="stylesheet" href="./payment.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Thanh Toán</h1>
+      <br />
+      <div id="cart-items"></div>
+
+      <div class="total-price" id="total-price"></div>
+
+      <form class="checkout-form" id="checkout-form">
+        <h2>Thông Tin Giao Hàng</h2>
+        <label for="name">Họ Tên:</label>
+        <input type="text" id="input-name" name="name" required />
+        <p style="color: red" id="error-name"></p>
+
+        <label for="address">Địa Chỉ:</label>
+        <input type="text" id="input-address" name="address" required />
+        <p style="color: red" id="error-address"></p>
+
+        <label for="phone">Email:</label>
+        <input type="email" id="input-email" name="phone" required />
+        <p style="color: red" id="error-phone"></p>
+
+        <label for="phone">Số Điện Thoại:</label>
+        <input type="text" id="input-phone" name="phone" required />
+        <p style="color: red" id="error-email"></p>
+
+        <label for="payment-method">Phương Thức Thanh Toán:</label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="credit-card">Thẻ Tín Dụng</option>
+          <option value="paypal">PayPal</option>
+          <option value="cash-on-delivery">Thanh Toán Khi Nhận Hàng</option>
+        </select>
+
+        <button id="btn-submit" type="submit">Đặt Hàng</button>
+      </form>
+    </div>
+    <a href="../Trang List Order/listorder.html"></a>
+    <script src="./payment.js"></script>
+  </body>
+</html>
